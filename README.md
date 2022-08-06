@@ -1,4 +1,4 @@
-# Update:
+# Things to update in new repo:
 
 ```
 .wakatime-project
