@@ -66,6 +66,7 @@ Dockerfile        text
 *.mdtxt           text
 *.mdtext          text
 *.txt             text
+*.wakatime-project text
 AUTHORS           text
 CHANGELOG         text
 CHANGES           text
