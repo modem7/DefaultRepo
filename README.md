@@ -1,4 +1,15 @@
-# Github documentation regarding this
+# Update:
+
+```
+.wakatime-project
+.github/settings.yml
+.github/dependabot.yml
+README.md
+```
+
+---
+
+# Github documentation regarding .gitattributes
 https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings#per-repository-settings
 
 ---
@@ -8,7 +19,7 @@ https://github.com/alexkaratarakis/gitattributes
 
 ---
 
-# CI to check files in a repo:
+# CI to check gitattribute files in a repo:
 
 ```
 missing_attributes=$(git ls-files | git check-attr -a --stdin | grep "text: auto")
