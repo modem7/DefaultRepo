@@ -22,7 +22,7 @@ https://github.com/alexkaratarakis/gitattributes
 # CI to check gitattribute files in a repo:
 
 ```
-missing_attributes=$(git ls-files | git check-attr -a --stdin | grep "text: auto")
+missing_attributes=$(git ls-files | git check-attr -a --stdin | grep "text eol=lf")
 if [[ "$missing_attributes" ]]; then
   echo ".gitattributes rule missing for the following files:";
   echo "$missing_attributes";
