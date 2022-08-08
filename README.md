@@ -30,3 +30,15 @@ else
   echo "All files have a corresponding rule in .gitattributes";
 fi
 ```
+
+---
+
+# Renormalize files in a repo:
+
+```
+git add . -u
+git commit -m "Saving files before refreshing line endings"
+git add --renormalize .
+git status
+git commit -m "Normalize all the line endings"
+```
