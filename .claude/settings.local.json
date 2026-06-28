@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Force -Recurse)",
+      "Bash(Select-Object FullName)",
+      "Bash(git config *)",
+      "Bash(Remove-Item \"V:\\\\DefaultRepo\\\\SECURITY.md\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh api *)",
+      "Bash(curl -s https://raw.githubusercontent.com/repository-settings/app/master/docs/configuration.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/repository-settings/app/master/docs/plugins/repository.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/repository-settings/app/master/docs/plugins/branches.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/modem7/Docker-NewYearCountdown/master/.github/config/labels.yml)",
+      "Bash(curl -s https://raw.githubusercontent.com/modem7/Docker-NewYearCountdown/master/.github/workflows/labelsync.yml)"
+    ]
+  }
+}
