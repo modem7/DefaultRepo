@@ -19,7 +19,7 @@ Blueprint/template for new repositories. Primarily targeting Linux-based project
 
 | File | Purpose |
 |---|---|
-| `.gitattributes` | Universal line-ending rules for 200+ file types (LF default) |
+| `.gitattributes` | Short line-ending rules: LF default, CRLF for Windows scripts, binary list |
 | `.gitignore` | Common ignore patterns (OS, editors, secrets, build artifacts, language-specific) |
 | `.editorconfig` | Consistent indentation and encoding across editors (LF, UTF-8) |
 | `.github/settings.yml` | Repo config-as-code via [GitHub Settings App](https://github.com/apps/settings), including label definitions (single source of truth — no separate label-sync workflow) |
@@ -49,17 +49,13 @@ Repo-specific rules (e.g. version pins, path exclusions) belong in this file, ex
 
 ## Git line endings
 
-### Check for missing .gitattributes rules
+### List files that rely only on the `* text=auto` fallback
 
 ```bash
-missing_attributes=$(git ls-files | git check-attr -a --stdin | grep "text eol=lf")
-if [[ "$missing_attributes" ]]; then
-  echo ".gitattributes rule missing for the following files:"
-  echo "$missing_attributes"
-else
-  echo "All files have a corresponding rule in .gitattributes"
-fi
+git ls-files | git check-attr text --stdin | grep ': auto$'
 ```
+
+Anything listed has no per-type rule. Git still detects text or binary on its own, so add a rule only if it picks wrongly.
 
 ### Inspect line endings in the index
 
