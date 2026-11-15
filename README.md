@@ -11,6 +11,7 @@ Blueprint/template for new repositories. Primarily targeting Linux-based project
 | `.wakatime-project` | Set the project name |
 | `.github/settings.yml` | Update repo name, description, homepage, topics |
 | `renovate.json` | Usually nothing — extends the shared `modem7/renovate-config` preset. Override `assignees`/`labels`/`timezone` or add optional extras here if this repo needs something different |
+| `LICENSE` | Set the copyright year to the current year (format: `Copyright (c) <year> modem7`) |
 | `README.md` | Replace with actual documentation |
 
 ---
@@ -22,13 +23,12 @@ Blueprint/template for new repositories. Primarily targeting Linux-based project
 | `.gitattributes` | Short line-ending rules: LF default, CRLF for Windows scripts, binary list |
 | `.gitignore` | Common ignore patterns (OS, editors, secrets, build artifacts, language-specific) |
 | `.editorconfig` | Consistent indentation and encoding across editors (LF, UTF-8) |
-| `.github/settings.yml` | Repo config-as-code via [GitHub Settings App](https://github.com/apps/settings), including label definitions (single source of truth — no separate label-sync workflow) |
+| `.github/settings.yml` | Repo config-as-code via [GitHub Settings App](https://github.com/apps/settings), inheriting the shared label set and defaults from [`modem7/.github`](https://github.com/modem7/.github) via `_extends: .github`. The Sponsor button (`FUNDING.yml`) is inherited from the same repo, so it is not copied here |
 | `.github/workflows/autoassign.yml` | Auto-assigns new issues to maintainer |
 | `.github/PULL_REQUEST_TEMPLATE.md` | PR description template |
 | `.github/ISSUE_TEMPLATE/` | Bug report and feature request forms |
 | `renovate.json` | Automated dependency updates via [Renovate](https://docs.renovatebot.com/), extending the shared [`modem7/renovate-config`](https://github.com/modem7/renovate-config) preset |
 | `.github/CODEOWNERS` | Auto-requests review from @modem7 on all PRs |
-| `.github/FUNDING.yml` | Adds "Sponsor" button linking to Buy Me a Coffee |
 | `CONTRIBUTING.md` | Contribution guidelines |
 | `LICENSE` | MIT License |
 | `.wakatime-project` | WakaTime project identifier |
